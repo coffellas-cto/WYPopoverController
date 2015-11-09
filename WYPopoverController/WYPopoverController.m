@@ -3096,12 +3096,12 @@ static CGPoint WYPointRelativeToOrientation(CGPoint origin, CGSize size, UIInter
         
         [delegate popoverController:self willRepositionPopoverToRect:&anotherRect inView:&anotherInView];
         
-        if (&anotherRect != NULL)
+        if (!CGRectEqualToRect(CGRectZero, anotherRect))
         {
             rect = anotherRect;
         }
         
-        if (&anotherInView != NULL)
+        if (anotherInView != nil)
         {
             inView = anotherInView;
         }
