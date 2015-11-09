@@ -1828,7 +1828,7 @@ static WYPopoverTheme *defaultTheme_ = nil;
         
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         
-        result = CGSizeMake(320, UIDeviceOrientationIsLandscape((UIDeviceOrientation)orientation) ? windowSize.width : windowSize.height);
+        result = CGSizeMake(320, UIInterfaceOrientationIsLandscape(orientation) ? windowSize.width : windowSize.height);
     }
     
     return result;
@@ -2155,7 +2155,7 @@ static WYPopoverTheme *defaultTheme_ = nil;
     
     if (backgroundView.arrowHeight > 0)
     {
-        if (UIDeviceOrientationIsLandscape((UIDeviceOrientation)orientation)) {
+        if (UIInterfaceOrientationIsLandscape(orientation)) {
             containerViewSize.width = backgroundView.frame.size.height;
             containerViewSize.height = backgroundView.frame.size.width;
         }
